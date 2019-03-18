@@ -1,7 +1,7 @@
 public class Card {
-    private String rank;
-    private String suit;
-    private int value;
+    public String rank;
+    public String suit;
+    public int value;
 
     Card(String rank, String suit){
         this.rank = rank;
