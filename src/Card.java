@@ -10,8 +10,7 @@ public class Card {
     }
     private int getValue(){
         if (rank.equals("Ace")){
-            value = 11;
-            //user input to choose value 11 or 1?
+            value = ace();
         }
         if (rank.equals("One")){
             value = 1;
@@ -54,9 +53,8 @@ public class Card {
         }
         return value;
     }
-
-    @Override
-    public String toString() {
-        return this.rank + " of " + this.suit + ". Value = " + this.value;
+    public int ace(){
+        if
+        return
     }
 }

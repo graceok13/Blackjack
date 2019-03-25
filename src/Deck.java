@@ -10,12 +10,11 @@ public class Deck {
         int count = 0;
         for (int i=0; i<4; i++){
             for (int j=0; j<13; j++){
-            Card x = new Card(ranks[i],suits[j]);
+            Card x = new Card(ranks[j],suits[i]);
             cards[count] = x;
             count ++;
             }
         }
-        shuffle();
     }
 
     public void shuffle() {
