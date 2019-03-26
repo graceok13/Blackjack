@@ -9,9 +9,6 @@ public class Card {
         this.value = getValue();
     }
     private int getValue(){
-        if (rank.equals("Ace")){
-            value = ace();
-        }
         if (rank.equals("One")){
             value = 1;
         }
@@ -53,8 +50,9 @@ public class Card {
         }
         return value;
     }
-    public int ace(){
-        if
-        return
+
+    @Override
+    public String toString() {
+        return rank + " of " + suit;
     }
 }
