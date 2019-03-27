@@ -4,7 +4,7 @@ public class Runner {
 
     public static void main(String[] args) {
         System.out.println("Play Black Jack!");
-        System.out.println("Rules: The object of the game is to get cards with a sum of 21, or a sum that is closer to 21 than your opponent's. Each card is worth its number value, face cards are worth 10, and you can choose for aces to be worth 1 or 11. You hit to get another card, and pass to not get another card. The game ends when both players pass, and whoever is closes to 21 wins. ");
+        System.out.println("Rules: The object of the game is to get cards with a sum of 21, or a sum that is closer to 21 than your opponent's. Each card is worth its number value, face cards are worth 10, and you can choose for aces to be worth 1 or 11. You hit to get another card, and pass to not get another card. The game ends when both players pass, and whoever is closest to 21 wins. ");
 
         Scanner sc = new Scanner(System.in);
 
