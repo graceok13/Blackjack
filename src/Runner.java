@@ -4,14 +4,19 @@ public class Runner {
 
     public static void main(String[] args) {
         System.out.println("Play Black Jack!");
-        System.out.println("Rules: The object of the game is to get cards with a sum of 21, or a sum that is closer to 21 than your opponent's. Each card is worth its number value, face cards are worth 10, and you can choose for aces to be worth 1 or 11. You hit to get another card, and pass to not get another card. The game ends when both players pass, and whoever is closest to 21 wins. ");
+        System.out.println("Rules: The object of the game is to get cards with a sum of 21, or a sum that is closer to 21 than your opponent's. Each card is worth its number value, face cards are worth 10, and you can choose for aces to be worth 1 or 11. You hit to get another card, and pass to not get another card. The game ends when both players pass, and whoever is closest to 21 wins.");
 
         Scanner sc = new Scanner(System.in);
 
         Game g = new Game();
         g.gameDeck.shuffle();
-        boolean keepsHitting = true;
+/*
+        for (int i=0; i<52; i++){
+            System.out.println(g.gameDeck.cards[i].toString());
+        }
+*/
 
+        boolean keepsHitting = true;
 
         while (keepsHitting || g.oppSum < 21) {
             System.out.println("Hit or pass? (Enter '1' for hit, and any other key to pass.)");
@@ -32,7 +37,7 @@ public class Runner {
                                 g.gameDeck.cards[g.deckCardCount].value = 11;
                             }
                             else {
-                                System.out.println("Enter '1' or '11' to choose a value.");
+                                System.out.println("You entered an invalid number, your turn is forfeited.");
                             }
                         }
                     }
