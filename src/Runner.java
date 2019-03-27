@@ -4,7 +4,7 @@ public class Runner {
 
     public static void main(String[] args) {
         System.out.println("Play Black Jack!");
-        System.out.println("Rules: ");
+        System.out.println("Rules: The object of the game is to get a sum of 21, or a sum that is closer to 21 than your opponent. Each card is worth its number value, face cards are worth 10, and you can choose for aces to be worth 1 or 11. You hit to get another card, and pass to not get another card. The game ends when both players pass, and whoever is closes to 21 wins. ");
 
         Scanner sc = new Scanner(System.in);
 
@@ -13,7 +13,7 @@ public class Runner {
         boolean keepsHitting = true;
 
 
-        while (keepsHitting || g.dealerSum < 21) {
+        while (keepsHitting || g.oppSum < 21) {
             System.out.println("Hit or pass? (Enter '1' for hit, and any other key to pass.)");
             if (sc.hasNextInt()) {
                 int deal = sc.nextInt();
@@ -57,33 +57,33 @@ public class Runner {
                 System.out.println("Bust! Stop Hitting!");
             }
 
-            if (g.dealerSum < 21) {
+            if (g.oppSum < 21) {
                 System.out.println("Opponent hits.");
-                g.dealerCards.add(g.gameDeck.cards[g.deckCardCount]);
+                g.oppCards.add(g.gameDeck.cards[g.deckCardCount]);
 
                 if (g.gameDeck.cards[g.deckCardCount].rank.equals("Ace")) {
-                    if (g.dealerSum <= 10) {
+                    if (g.oppSum <= 10) {
                         g.gameDeck.cards[g.deckCardCount].value = 11;
                     }else{
                         g.gameDeck.cards[g.deckCardCount].value = 1;
                     }
                 }
 
-                g.dealerSum += g.gameDeck.cards[g.deckCardCount].value;
+                g.oppSum += g.gameDeck.cards[g.deckCardCount].value;
                 g.deckCardCount++;
-                System.out.println("Opponent's cards: " + g.dealerCards.toString() + ". Opponent's sum: " + g.dealerSum);
+                System.out.println("Opponent's cards: " + g.oppCards.toString() + ". Opponent's sum: " + g.oppSum);
             }else{
                 System.out.println("Opponent passes.");
-                System.out.println("Opponent's cards: " + g.dealerCards.toString() + ". Opponent's sum: " + g.dealerSum);
+                System.out.println("Opponent's cards: " + g.oppCards.toString() + ". Opponent's sum: " + g.oppSum);
             }
         }
-        if ( java.lang.Math.abs(21 - g.playerSum) < java.lang.Math.abs(21 - g.dealerSum)){
+        if ( java.lang.Math.abs(21 - g.playerSum) < java.lang.Math.abs(21 - g.oppSum)){
             System.out.println("You won!");
         }
-        if ( java.lang.Math.abs(21 - g.playerSum) > java.lang.Math.abs(21 - g.dealerSum)){
+        if ( java.lang.Math.abs(21 - g.playerSum) > java.lang.Math.abs(21 - g.oppSum)){
             System.out.println("Your opponent won. You lost.");
         }
-        if ( java.lang.Math.abs(21 - g.playerSum) == java.lang.Math.abs(21 - g.dealerSum)){
+        if ( java.lang.Math.abs(21 - g.playerSum) == java.lang.Math.abs(21 - g.oppSum)){
             System.out.println("It's a tie.");
         }
     }

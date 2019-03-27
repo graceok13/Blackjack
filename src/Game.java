@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Game {
 
-    public ArrayList<Card> dealerCards = new ArrayList<Card>();
-    public int dealerSum;
+    public ArrayList<Card> oppCards = new ArrayList<Card>();
+    public int oppSum;
 
     public ArrayList<Card> playerCards = new ArrayList<Card>();
     public int playerSum;
