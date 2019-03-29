@@ -19,6 +19,7 @@ public class  Runner {
         boolean keepsHitting = true;
 
         while (keepsHitting || g.oppSum < 21) {
+
             System.out.println("Hit or pass? (Enter '1' for hit, and any other number to pass.)");
             if (sc.hasNextInt()) {
                 int deal = sc.nextInt();
@@ -38,7 +39,7 @@ public class  Runner {
                                 g.gameDeck.cards[g.deckCardCount].value = 11;
                             }
                         } else {
-                            System.out.println("You entered an invalid number, your turn is forfeited.");
+                            System.out.println("You entered an invalid number, restart the game.");
                         }
                     }
 
